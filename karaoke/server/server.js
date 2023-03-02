@@ -10,5 +10,6 @@ app.use(express.urlencoded({
 app.use(cors());
 
 require("./config/mongoose.config");
+require("./routes/karaoke.routes")(app);
 
 app.listen(port, () => console.log('Listening on port:' + port))
