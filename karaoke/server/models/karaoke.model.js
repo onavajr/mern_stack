@@ -8,7 +8,7 @@ const karaokeSchema = new mongoose.Schema({
     },
     artist: {
         type: String,
-        minlength: [10,"Album art URL must be at Least 5 chars long"],
+        minlength: [5,"Album art URL must be at Least 5 chars long"],
     },
     albumArtUrl: {
         type: String,
@@ -16,19 +16,19 @@ const karaokeSchema = new mongoose.Schema({
     },
     videoURL: {
         type: String,
-        required: [true, " must have a little for a weekend karayoke"],
+        minlength: [10," must have a little for a weekend karayoke"],
     },
-    gender:{
+    genre:{
         type: String,
-        required: [true, " must have10 char long"],
-        enum: ["Pop", "Country", "Hiphop"],
-        minlength: [3, "Your song must be at least 3 chars long"],
+        required: [true, "Must have karaoke genre"],
+        enum: ["Pop", "Country", "Hiphop","Love Song"],
     },
     year: {
         type: Number,
         required: [true, "The song must be wrtten no earlier than 1930"],
+        min: [1930, "The song must be written no earlier than 1930"],
     },
-    lisenced: {
+    licensed: {
         type: Boolean,
         default: true,
     },
