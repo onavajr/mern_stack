@@ -33,4 +33,20 @@ module.exports = {
             });
     },
 
+    getOne: (req, res) => {
+        console.log(req.params.id);
+
+        Karaoke.findById(req.params.id)
+            .then((oneKaraokeSongs) => {
+                console.log(oneKaraokeSongs);
+                res.json(oneKaraokeSongs);
+            })
+
+            .catch((err)=> {
+                console.log("error found in getOne");
+                console.log(err);
+                res.json(err);
+            });
+    },
+
 }
