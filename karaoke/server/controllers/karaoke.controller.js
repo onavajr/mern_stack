@@ -43,7 +43,43 @@ module.exports = {
             })
 
             .catch((err)=> {
-                console.log("error found in getOne");
+                console.log("error found in getone");
+                console.log(err);
+                res.json(err);
+            });
+    },
+
+    update: (req, res) => {
+        console.log(req.params.id);
+        console.log(req.body);
+
+        Karaoke.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+            runValidators: true,
+        })
+            .then((updateKaraokeSongs) => {
+                console.log(updateKaraokeSongs);
+                res.json(updateKaraokeSongs);
+            })
+
+            .catch((err)=> {
+                console.log("error found in update");
+                console.log(err);
+                res.json(err);
+            });
+    },
+
+    delete: (req, res) => {
+        console.log(req.params.id);
+
+        Karaoke.findByIdAndDelete(req.params.id)
+            .then((deletedKaraokeSongs) => {
+                console.log(deletedKaraokeSongs);
+                res.json(deletedKaraokeSongs);
+            })
+
+            .catch((err)=> {
+                console.log("error found in delete");
                 console.log(err);
                 res.json(err);
             });
