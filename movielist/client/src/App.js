@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { Router } from '@reach/router';
+import MovieAll from './components/MovieAll';
+import MovieOne from './components/MovieOne';
+import MovieNew from './components/MovieNew';
+import MovieEdit from './components/MovieEdit';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <MovieAll path = "/" />
+        <MovieEdit path = "/movies/:id/edit" />
+        <MovieNew path="/movies/new" />
+        <MovieOne path="/movies/:id" />
+        
+        
+      </Router>
     </div>
   );
 }
