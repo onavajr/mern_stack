@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import ListAll from './components/ListAll';
+import New from './components/New';
+import Edit from './components/Edit';
+import Details from './components/Details';
+
+import { Router } from '@reach/router';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Router>
+        <ListAll path = "/karoke" />
+        <New path = "/karaoke/new" />
+        <Edit path = "/karaoke/:id/edit" />
+        <Details path = "/karaoke/:id" />
+      </Router>
+      
     </div>
   );
 }
