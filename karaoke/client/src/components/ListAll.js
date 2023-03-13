@@ -13,7 +13,7 @@ const ListAll = (props) => {
         .catch((err) => {
             console.log(err);
         });
-        ;
+
     },[]);
 
     return(
@@ -23,19 +23,25 @@ const ListAll = (props) => {
                     <th>Song tiltle</th>
                     <th>Action Available</th>
                     <tbody>
-                        <tr>
-                            <td>Title</td>
-                            <td>
-                                <button>Edit</button>
-                                <button>Delete</button>
-                            </td>
-                        </tr>
+                        {
+                            allSongs.map((song, index) => (
+                            <tr>
+                            <br/>
+                                <td>{song.title}</td>
+                                <br/>
+                                <td>
+                                    <button>Edit</button>
+                                    <button>Delete</button>
+                                </td>
+                            </tr>
+                        ))
+                        }
                     </tbody>
                 </thead>
             </table>
         </div>
     )
-}
+};
 
 export default ListAll;
 
