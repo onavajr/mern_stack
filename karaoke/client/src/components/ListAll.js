@@ -22,6 +22,7 @@ const ListAll = (props) => {
                 <thead>
                     <th>Song tiltle</th>
                     <th>Action Available</th>
+                    <br />
                     <tbody>
                         {
                             allSongs.map((song, index) => (

@@ -13,7 +13,7 @@ function App() {
     <div className="App">
      <Header />
       <Router>
-        <ListAll path = "/karaoke/" />
+        <ListAll path = "/karaoke" />
         <New path = "/karaoke/new" />
         <Edit path = "/karaoke/:id/edit" />
         <Details path = "/karaoke/:id" />
