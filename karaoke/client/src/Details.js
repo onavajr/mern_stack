@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {Link, Navigate} from '@reach/router';
 import axios from 'axios';
 
-const New = (props) => {
+const Details = (props) => {
     return(
         <div>
-            <h1>New</h1>
+            <h1>Details</h1>
         </div>
     )
 };
 
-export default New;
+export default Details;
