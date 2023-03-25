@@ -1,5 +1,12 @@
 const mongoose = require('mongoose');
 
-const Candy = new mongoose.Schema({
+const CandySchema = new mongoose.Schema({
     name: String,
-})
+    price: Number,
+    description: String,
+
+}, {timestamp: true})
+
+const Candy = mongoose.model("Candy", CandySchema);
+
+module.export = Candy;
