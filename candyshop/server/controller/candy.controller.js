@@ -1,8 +1,8 @@
 const Candy = require('../models/candy.models');
 
 module.exports = {
-    getAll: (req, res) => {
-        Candy.find({})
+    findAll: (req, res) => {
+        Candy.find()
             .then((allCandies) => res.json(allCandies))
             .catch((err) => res.json({message: "Something went wrong", error:  err}));
     },

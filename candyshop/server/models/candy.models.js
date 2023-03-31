@@ -9,4 +9,4 @@ const CandySchema = new mongoose.Schema({
 
 const Candy = mongoose.model("Candy", CandySchema);
 
-module.export = Candy;
+module.exports = Candy;
