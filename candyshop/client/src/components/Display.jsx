@@ -4,4 +4,4 @@ const Display = (props) => {
 
 }
 
-export default DisplayList;
+export default DisplayList;  
