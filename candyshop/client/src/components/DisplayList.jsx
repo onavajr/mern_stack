@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const DisplayList = (props) => {
     return (
         <div>
-            Display List Components
+            <h1>Display List Components</h1>
         </div>
     )
 };
