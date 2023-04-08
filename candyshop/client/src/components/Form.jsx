@@ -35,6 +35,7 @@ const PersonForm = () => {
             </p>
             <input type="submit"/>
         </form>
+        <p>Submit <form action=""></form></p>
     )
 }
 export default PersonForm;
