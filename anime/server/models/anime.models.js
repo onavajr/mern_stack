@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const AnimeSchema = new mongoose.Schema({
-    Title: String,
-    Genre: String,
-    Date: Date,
+    title: String,
+    genre: String,
+    date: Date,
 }, {timestamps:true})
 
 const Anime = mongoose.model("Anime", AnimeSchema);
