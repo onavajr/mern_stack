@@ -1,7 +1,7 @@
-const AnimeController = require('../controller/anime.controller');
+const AnimeController = require("../controller/Anime.controller");
 
-module.exports = () => {
-    app.get('/api/anime', AnimeController.findAll);
-    app.get('/api/anime/:id' AnimeController.findOne);
-    app.
-}
+module.exports = (app) => {
+    app.get("/api/candies", AnimeController.findAll);
+    app.get("/api/candies/:id", AnimeController.findOne);
+    app.post("/api/candies", AnimeController.create);
+};
