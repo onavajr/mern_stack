@@ -1,12 +1,13 @@
 const express = require("express");
-cosnt cors = require('cors');
+const cors = require("cors");
 const app = express();
 const port = 8000;
-
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(cors());
 
-require('./config/mongoose.config');
-require('.routs');
+require("./config/mongoose.config");
+require("./routes/anime.routes")(app);
+
+app.listen(port, () => console.log("Listening to port", port));
