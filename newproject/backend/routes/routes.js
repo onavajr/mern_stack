@@ -1,5 +1,5 @@
 const express = require('express')
-
+const Portfolio = require('../model/portfoliomodel')
 const router = express.Router()
 
 //GET all projects
@@ -13,8 +13,17 @@ router.get('/:id', (req, res) => {
 })
 
 //POST a new project
-router.post('/', (req, res) => {
-    res.json('New project')
+router.post('/', async(req, res) => {
+    const {title, phone, address} = req.body
+
+    try {
+        const portfolio = await Portfolio.create({title, phone, address})
+        res.status(200).json(portfolio)
+    } catch (error) {
+        res.status(400).json({error: error.mssg})
+    }
+
+    res.json({mssg: 'New Employer'})
 })
 
 //DELETE a new project
