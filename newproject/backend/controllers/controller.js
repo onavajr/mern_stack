@@ -1,4 +1,5 @@
 const Portfolio = require('../model/portfoliomodel')
+const mongoose = require('mongoose')
 
 //get all project portfolio
 const getPortfolios = async (req, res) => {
@@ -13,7 +14,7 @@ const getPortfolio = async(req, res) => {
     const portfolio = await Portfolio.findById(id)
 
     if(!portfolio){
-        return res.status(404).json({error: 'cannot find routes'})
+        return res.status(404).json({error: error.mssg})
     }
 
     res.status(200).json(portfolio)
