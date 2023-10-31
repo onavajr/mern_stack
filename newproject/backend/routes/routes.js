@@ -1,5 +1,5 @@
 const express = require('express')
-const Portfolio = require('../model/portfoliomodel')
+
 const {
     getPortfolios,
     getPortfolio,

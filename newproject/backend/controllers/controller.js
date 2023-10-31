@@ -7,10 +7,14 @@ const getPortfolios = async (req, res) => {
     res.status(200).json(portfolio)
 }
 
-
 //get a single projectportfolio
 const getPortfolio = async(req, res) => {
-    const {id} = req.params
+    const { id } = req.params
+    
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'Cannot find ID'})
+    }
+    
     const portfolio = await Portfolio.findById(id)
 
     if(!portfolio){

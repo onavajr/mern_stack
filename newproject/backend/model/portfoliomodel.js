@@ -18,4 +18,4 @@ const portfolioSchema = new Schema({
     }
 }, { timestamps: true })
 
-module.exports = mongoose.model('portfolio', portfolioSchema)
+module.exports = mongoose.model('Portfolio', portfolioSchema)
