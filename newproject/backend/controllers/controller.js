@@ -54,10 +54,28 @@ const deletePortfolio = async (req, res) => {
 } 
 
 //update a projectportfolio
+const updatePortfolio = async (req, res) => {
+    const {id} = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'Cannot find id'})
+    }
+    const portfolio = await Portfolio.findOneAndUpdate({_id: id},{
+        ...req.body
+    })
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'Cannot find id'})
+    }
+
+    res.status(200).json(portfolio)
+}
+
 
 module.exports = {
     getPortfolios,
     getPortfolio,
     createPortfolio,
-    deletePortfolio
+    deletePortfolio,
+    updatePortfolio
 }

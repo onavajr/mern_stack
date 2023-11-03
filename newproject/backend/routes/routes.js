@@ -3,7 +3,9 @@ const express = require('express')
 const {
     getPortfolios,
     getPortfolio,
-    createPortfolio
+    createPortfolio,
+    deletePortfolio,
+    updatePortfolio
 } = require('../controllers/controller')
 
 const router = express.Router()
@@ -18,13 +20,9 @@ router.get('/:id', getPortfolio)
 router.post('/',createPortfolio)
 
 //DELETE a new project
-router.delete('/:id', (req, res) => {
-    res.json('Delete new project')
-})
+router.delete('/:id', deletePortfolio)
 
 //UPDATE a new project
-router.patch('/:id', (req, res) => {
-    res.json('Update new project')
-})
+router.patch('/:id', updatePortfolio)
 
 module.exports = router
