@@ -1,5 +1,8 @@
 import { useEffect, useState} from 'react'
 
+//components
+import PortfolioForm from '../components/portfolioforms'
+
 const Home = () => {
     const [portfolios, setPortfolios] = useState(null)
     useEffect(() => {
@@ -22,6 +25,7 @@ const Home = () => {
                 <p key={portfolio._id}>{portfolio.title}</p>
             ))}
             </div>
+            <PortfolioForm/>
         </div>
     )
 }
