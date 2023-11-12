@@ -2,7 +2,7 @@ const portfolioDetails = ({ portfolio }) => {
 
     return (
         <div className="portfolio-details">
-            <h4>{workout.title}</h4>
+            <h4>{portfolio.title}</h4>
             <p><strong>Load</strong></p>
         </div>
     )

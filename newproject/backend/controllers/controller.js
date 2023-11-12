@@ -1,13 +1,13 @@
 const Portfolio = require('../model/portfoliomodel')
 const mongoose = require('mongoose')
 
-//get all project portfolio
+//get all portfolio portfolio
 const getPortfolios = async (req, res) => {
     const portfolio = await Portfolio.find({}).sort({createdAt: -1})
     res.status(200).json(portfolio)
 }
 
-//get a single projectportfolio
+//get a single portfolioportfolio
 const getPortfolio = async(req, res) => {
     const { id } = req.params
     
@@ -25,7 +25,7 @@ const getPortfolio = async(req, res) => {
 }
 
 
-//create new projectportfolio
+//create new portfolioportfolio
 const createPortfolio = async (req, res) => {
     const {title, phone, address} = req.body
 
@@ -37,7 +37,7 @@ const createPortfolio = async (req, res) => {
     }
 }
 
-//delete a projectportfolio
+//delete a portfolioportfolio
 const deletePortfolio = async (req, res) => {
     const { id } = req.params
     if(!mongoose.Types.ObjectId.isValid(id)){
@@ -53,7 +53,7 @@ const deletePortfolio = async (req, res) => {
     res.status(200).json(portfolio)
 } 
 
-//update a projectportfolio
+//update a portfolioportfolio
 const updatePortfolio = async (req, res) => {
     const {id} = req.params
 

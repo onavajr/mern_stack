@@ -7,7 +7,7 @@ const Home = () => {
     const [portfolios, setPortfolios] = useState(null)
     useEffect(() => {
         const fetchPortfolios = async () => {
-            const response = await fetch('/api/newproject')
+            const response = await fetch('/api/portfolio')
             const json = await response.json()
 
             if (response.ok) {

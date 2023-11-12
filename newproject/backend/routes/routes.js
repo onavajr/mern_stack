@@ -10,19 +10,19 @@ const {
 
 const router = express.Router()
 
-//GET all projects
+//GET all portfolios
 router.get('/', getPortfolios)
 
-//GET a single projects
+//GET a single portfolios
 router.get('/:id', getPortfolio)
 
-//POST a new project
+//POST a new portfolio
 router.post('/',createPortfolio)
 
-//DELETE a new project
+//DELETE a new portfolio
 router.delete('/:id', deletePortfolio)
 
-//UPDATE a new project
+//UPDATE a new portfolio
 router.patch('/:id', updatePortfolio)
 
 module.exports = router

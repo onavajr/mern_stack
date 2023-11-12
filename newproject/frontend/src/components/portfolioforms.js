@@ -31,7 +31,7 @@ const PortfolioForm = () => {
             setAddress('')
             setPhone('')
             setError(null)
-            console.log('new workout added', json.error)
+            console.log('portfolio added', json.error)
         }
     }
 
