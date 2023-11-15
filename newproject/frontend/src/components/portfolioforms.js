@@ -2,16 +2,16 @@ import { useState } from "react"
 
 const PortfolioForm = () => {
     const [title, setTitle] = useState('')
-    const [phone, setPhone] = useState('')
     const [address, setAddress] = useState('')
+    const [phone, setPhone] = useState('')
     const [error, setError] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const portfolio = {title,address,phone}
+        const portfolio = {title, address, phone}
         
-        const response = await fetch('/api/portfolio', {
+        const response = await fetch('/api/portfolios', {
             method: 'POST',
             body: JSON.stringify(portfolio),
             headers: {

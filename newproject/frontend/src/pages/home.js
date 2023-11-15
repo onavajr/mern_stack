@@ -1,6 +1,7 @@
 import { useEffect, useState} from 'react'
 
 //components
+import portfolioDetails from '../components/portfoliodetails'
 import PortfolioForm from '../components/portfolioforms'
 
 const Home = () => {
@@ -13,16 +14,19 @@ const Home = () => {
             if (response.ok) {
                 setPortfolios(json)
             }
-        }
+        }  
 
         fetchPortfolios()
     }, [])
 
     return (
         <div className="home">
-            <div className='portfolios'>
+            <div className="portfolios">
             {portfolios && portfolios.map((portfolio) => (
-                <p key={portfolio._id}>{portfolio.title}</p>
+                <p key={portfolio._id}>{portfolio.title}</p>,
+                <p key={portfolio._id}>{portfolio.number}</p>,
+                <p key={portfolio._id}>{portfolio.address}</p>,
+                <portfolioDetails key={portfolio.id} portfolio={portfolio}/>
             ))}
             </div>
             <PortfolioForm/>
