@@ -1,7 +1,7 @@
 import { useEffect, useState} from 'react'
 
 //components
-import portfolioDetails from '../components/portfoliodetails'
+import PortfolioDetails from '../components/portfoliodetails'
 import PortfolioForm from '../components/portfolioforms'
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
                 <p key={portfolio._id}>{portfolio.title}</p>,
                 <p key={portfolio._id}>{portfolio.number}</p>,
                 <p key={portfolio._id}>{portfolio.address}</p>,
-                <portfolioDetails key={portfolio.id} portfolio={portfolio}/>
+                <PortfolioDetails key={portfolio.id} portfolio={portfolio}/>
             ))}
             </div>
             <PortfolioForm/>
