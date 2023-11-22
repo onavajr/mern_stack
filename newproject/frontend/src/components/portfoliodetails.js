@@ -5,7 +5,7 @@ const PortfolioDetails = ({ portfolio }) => {
             <h4>{portfolio.title}</h4>
             <p><strong>Address: </strong>{portfolio.address}</p>
             <p><strong>Phone: </strong>{portfolio.phone}</p>
-            <p>{portfolio.createdAt}</p>
+            <p>Time and Date: {portfolio.createdAt}</p>
 
 
         </div>

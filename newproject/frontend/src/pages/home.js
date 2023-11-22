@@ -26,7 +26,7 @@ const Home = () => {
                 <p key={portfolio._id}>{portfolio.title}</p>,
                 <p key={portfolio._id}>{portfolio.number}</p>,
                 <p key={portfolio._id}>{portfolio.address}</p>,
-                <PortfolioDetails key={portfolio.id} portfolio={portfolio}/>
+                <PortfolioDetails key={portfolio._id} portfolio={portfolio}/>
             ))}
             </div>
             <PortfolioForm/>

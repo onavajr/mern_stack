@@ -11,7 +11,7 @@ const PortfolioForm = () => {
 
         const portfolio = {title, address, phone}
         
-        const response = await fetch('/api/portfolios', {
+        const response = await fetch('/api/portfolio', {
             method: 'POST',
             body: JSON.stringify(portfolio),
             headers: {
@@ -38,21 +38,21 @@ const PortfolioForm = () => {
     return (
         <form className="create" onSubmit={handleSubmit}>
             <h3>Your Company</h3>
-            <label>Job Title:</label>
+            <label>Job Title: </label>
             <input
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
             />
 
-            <label>Address</label>
+            <label>Address: </label>
             <input
                 type="text"
                 onChange={(e) => setAddress(e.target.value)}
                 value={address}
             />
 
-            <label>Phone</label>
+            <label>Phone: </label> 
             <input
                 type="number"
                 onChange={(e) => setPhone(e.target.value)}
