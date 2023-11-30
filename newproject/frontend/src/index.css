@@ -96,6 +96,7 @@ form button {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 div.error {
