@@ -1,18 +1,20 @@
-import { useEffect, useState} from 'react'
+import { useEffect } from 'react'
+import { usePortfolioContext } from '../hooks/usePortfolioContext'
 
 //components
 import PortfolioDetails from '../components/portfoliodetails'
 import PortfolioForm from '../components/portfolioforms'
 
 const Home = () => {
-    const [portfolios, setPortfolios] = useState(null)
+    const {portfolios, dispatch } = usePortfolioContext()
+
     useEffect(() => {
         const fetchPortfolios = async () => {
-            const response = await fetch('/api/portfolio')
+            const response = await fetch('/api/newproject')
             const json = await response.json()
 
             if (response.ok) {
-                setPortfolios(json)
+                dispatch({type: 'SET_PORTFOLIO', payload: json})
             }
         }  
 

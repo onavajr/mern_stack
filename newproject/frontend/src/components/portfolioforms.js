@@ -1,6 +1,9 @@
 import { useState } from "react"
+import { usePortfolioContext } from "../hooks/usePortfolioContext"
 
 const PortfolioForm = () => {
+    const { dispatch } = usePortfolioContext()
+
     const [title, setTitle] = useState('')
     const [address, setAddress] = useState('')
     const [phone, setPhone] = useState('')
@@ -31,34 +34,37 @@ const PortfolioForm = () => {
             setAddress('')
             setPhone('')
             setError(null)
-            console.log('portfolio added', json.error)
+            console.log('portfolio added', json)
+            dispatch({type: 'CREATE_WORKOUT', payload: json})
         }
     }
 
     return (
         <form className="create" onSubmit={handleSubmit}>
             <h3>Your Company</h3>
-            <label>Job Title: </label>
+            <label>Job Title: 
             <input
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
             />
+            </label>
 
-            <label>Address: </label>
+            <label>Address: 
             <input
                 type="text"
                 onChange={(e) => setAddress(e.target.value)}
                 value={address}
             />
-
-            <label>Phone: </label> 
+            </label>
+            <label>Phone: 
             <input
                 type="number"
                 onChange={(e) => setPhone(e.target.value)}
                 value={phone}
             />
-
+            </label> 
+            
             <button>Add Company</button>
             {error && <div className="error">{error}/</div>}
         </form>
